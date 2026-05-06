@@ -1,0 +1,14 @@
+{
+  "name": "about-me",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --quiet",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "xp.css": "^0.2.6"
+  }
+}

@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Projects
+permalink: /projects/
+---
+
+{% from "components/explorer-window.njk" import explorerWindow %}
+
+{% call explorerWindow("Projects", "C:\\Projects", "", "") %}
+  <div class="prose explorer__prose">
+    <h1>Projects</h1>
+
+    {% if collections.projects and collections.projects.length %}
+      <ul class="cards">
+        {% for p in collections.projects %}
+          <li class="card">
+            <h2 class="card__title"><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
+            {% if p.data.summary %}<p class="card__summary">{{ p.data.summary }}</p>{% endif %}
+            <div class="card__meta">
+              <time datetime="{{ p.date | htmlDate }}">{{ p.date | readableDate }}</time>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No projects yet. Add one in <a href="/admin/">Decap</a> (or create a Markdown file in <code>src/content/projects</code>).</p>
+    {% endif %}
+  </div>
+{% endcall %}

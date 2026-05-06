@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+---
+
+{% from "components/explorer-window.njk" import explorerWindow %}
+
+{% set explorerPath = explorerPath or ("C:\\Projects\\" ~ title) %}
+
+{% call explorerWindow(title, explorerPath, "", "") %}
+  <div class="prose explorer__prose">
+    <h1>{{ title }}</h1>
+    {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
+
+    <dl class="meta">
+      {% if date %}
+        <div class="meta__row">
+          <dt>Date</dt>
+          <dd><time datetime="{{ date | htmlDate }}">{{ date | readableDate }}</time></dd>
+        </div>
+      {% endif %}
+      {% if tags and tags.length %}
+        <div class="meta__row">
+          <dt>Tags</dt>
+          <dd>
+            <ul class="tags">
+              {% for t in tags %}<li>{{ t }}</li>{% endfor %}
+            </ul>
+          </dd>
+        </div>
+      {% endif %}
+    </dl>
+
+    {% if links and links.length %}
+      <div class="actions">
+        {% for link in links %}
+          <a class="btn" href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <hr />
+    {{ content | safe }}
+  </div>
+{% endcall %}

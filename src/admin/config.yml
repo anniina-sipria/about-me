@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO
+  branch: main
+  # Decap needs an OAuth helper service for GitHub auth.
+  # Fill these in once you deploy the auth service (e.g., decap-cms-oauth).
+  # base_url: https://YOUR-OAUTH-SERVICE.example
+  # auth_endpoint: auth
+
+publish_mode: editorial_workflow
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "layout", label: "Layout", widget: "hidden", default: "layouts/project.njk" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "summary", label: "Summary", widget: "string", required: false }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        required: false
+        fields:
+          - { name: "label", label: "Label", widget: "string" }
+          - { name: "url", label: "URL", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "permalink", label: "Permalink", widget: "hidden", default: "/projects/{{slug}}/" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "src/pages/about.md"
+        fields:
+          - { name: "layout", label: "Layout", widget: "hidden", default: "layouts/page.njk" }
+          - { name: "title", label: "Title", widget: "hidden", default: "About" }
+          - { name: "permalink", label: "Permalink", widget: "hidden", default: "/about/" }
+          - { name: "body", label: "Body", widget: "markdown" }
+      - label: "Contact"
+        name: "contact"
+        file: "src/pages/contact.md"
+        fields:
+          - { name: "layout", label: "Layout", widget: "hidden", default: "layouts/page.njk" }
+          - { name: "title", label: "Title", widget: "hidden", default: "Contact" }
+          - { name: "permalink", label: "Permalink", widget: "hidden", default: "/contact/" }
+          - { name: "body", label: "Body", widget: "markdown" }

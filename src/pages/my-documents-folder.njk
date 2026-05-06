@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.documentFolders
+  size: 1
+  alias: folder
+permalink: "/my-documents/{{ folder.slug }}/"
+---
+
+{% from "components/explorer-window.njk" import explorerWindow %}
+
+{% call explorerWindow(folder.title, folder.explorerPath, (folder.docs.length ~ " objects"), "") %}
+  {% if folder.docs and folder.docs.length %}
+    <div class="explorer__icons" role="list" aria-label="{{ folder.explorerPath }} contents">
+      {% for d in folder.docs %}
+        <a class="explorer__item explorer__item--link" role="listitem" href="{{ d.url }}" aria-label="Open {{ d.data.title or d.page.fileSlug }} in WordPad">
+          <img class="explorer__itemimg" src="/assets/icons/my-documents.svg" alt="" width="48" height="48" />
+          <span class="explorer__itemlabel">{{ d.data.title or d.page.fileSlug }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="prose explorer__prose">
+      <p>No documents in this folder yet.</p>
+    </div>
+  {% endif %}
+{% endcall %}

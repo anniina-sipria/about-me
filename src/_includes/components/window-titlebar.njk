@@ -1,0 +1,9 @@
+{% set windowTitle = windowTitle or title or "Window" %}
+<div class="title-bar">
+  <div class="title-bar-text">{{ windowTitle }}</div>
+  <div class="title-bar-controls">
+    <button aria-label="Minimize" type="button"></button>
+    <button aria-label="Maximize" type="button"></button>
+    <button aria-label="Close" type="button"></button>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+---
+layout: layouts/base.njk
+---
+
+{% set windowTitle = "WordPad - " ~ (title or "Document") %}
+
+<section class="window window--wordpad" aria-label="{{ windowTitle }}">
+  {% include "components/window-titlebar.njk" %}
+
+  <div class="explorer__menubar" role="menubar" aria-label="WordPad menu bar">
+    <button class="explorer__menuitem" type="button" role="menuitem">File</button>
+    <button class="explorer__menuitem" type="button" role="menuitem">Edit</button>
+    <button class="explorer__menuitem" type="button" role="menuitem">View</button>
+    <button class="explorer__menuitem" type="button" role="menuitem">Insert</button>
+    <button class="explorer__menuitem" type="button" role="menuitem">Format</button>
+    <button class="explorer__menuitem" type="button" role="menuitem">Help</button>
+  </div>
+
+  <div class="explorer__toolbar" role="toolbar" aria-label="WordPad toolbar">
+    <div class="toolbar-group" aria-label="WordPad toolbars">
+      <div class="toolbar" aria-label="Standard toolbar">
+        <button class="tool-btn" type="button" title="New" aria-label="New">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+        </button>
+        <button class="tool-btn" type="button" title="Open" aria-label="Open">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+        <button class="tool-btn" type="button" title="Save" aria-label="Save">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+        </button>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <button class="tool-btn" type="button" title="Print" aria-label="Print">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+        </button>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <button class="tool-btn" type="button" title="Find" aria-label="Find">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="toolbar" aria-label="Formatting toolbar">
+        <label class="sr-only" for="wp-font-family">Font</label>
+        <select class="font-family" id="wp-font-family" aria-label="Font family">
+          <option value="Arial">Arial</option>
+          <option value="Tahoma">Tahoma</option>
+        </select>
+
+        <label class="sr-only" for="wp-font-size">Size</label>
+        <select class="font-size" id="wp-font-size" aria-label="Font size">
+          <option value="3">12</option>
+        </select>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <button class="tool-btn" type="button" title="Bold" aria-label="Bold"><b aria-hidden="true">B</b></button>
+        <button class="tool-btn" type="button" title="Italic" aria-label="Italic"><i aria-hidden="true">I</i></button>
+        <button class="tool-btn" type="button" title="Underline" aria-label="Underline"><u aria-hidden="true">U</u></button>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <button class="tool-btn" type="button" title="Align Left" aria-label="Align Left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="17" y1="10" x2="3" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="17" y1="18" x2="3" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="window-body" role="document" aria-label="Document body">
+    <div class="prose explorer__prose">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <div class="status-bar" role="status" aria-label="Status bar">
+    <p class="status-bar-field"></p>
+    <p class="status-bar-field"></p>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+{#
+  Explorer-style window shell (Windows XP Luna / Explorer layout).
+  Use via:
+
+  {% from "components/explorer-window.njk" import explorerWindow %}
+  {% call explorerWindow("WINDOWS", "C:\\WINDOWS", "18 objects") %}...{% endcall %}
+#}
+
+{% macro explorerWindow(titleText, pathText, statusLeftText, statusRightText) %}
+  {% set windowTitle = titleText or title or "Window" %}
+  {% set explorerPath = pathText or "C:\\" ~ (titleText or title or "") %}
+
+  <section class="window window--explorer" aria-label="{{ windowTitle }}">
+    {% include "components/window-titlebar.njk" %}
+
+    <div class="explorer__menubar" role="menubar" aria-label="Menu bar">
+      <button class="explorer__menuitem" type="button" role="menuitem">File</button>
+      <button class="explorer__menuitem" type="button" role="menuitem">Edit</button>
+      <button class="explorer__menuitem" type="button" role="menuitem">View</button>
+      <button class="explorer__menuitem" type="button" role="menuitem">Favorites</button>
+      <button class="explorer__menuitem" type="button" role="menuitem">Tools</button>
+      <button class="explorer__menuitem" type="button" role="menuitem">Help</button>
+    </div>
+
+    <div class="explorer__toolbar" role="toolbar" aria-label="Standard buttons">
+      <img class="explorer__toolbarimg" src="/assets/toolbar.jpeg" alt="" />
+    </div>
+
+    <div class="explorer__address" aria-label="Address bar">
+      <span class="explorer__addresslabel">Address</span>
+      <div class="explorer__addressfield" role="group" aria-label="Current path">
+        <img class="explorer__addressicon" src="/assets/icons/folder.svg" alt="" width="16" height="16" />
+        <input class="explorer__path" type="text" value="{{ explorerPath }}" readonly />
+      </div>
+      <button class="explorer__gobtn" type="button" aria-label="Go">
+        <span aria-hidden="true">➜</span>
+      </button>
+    </div>
+
+    <div class="window-body explorer__body">
+      <div class="explorer__split" role="group" aria-label="Explorer panes">
+        <aside class="explorer__tasks" aria-label="Common tasks">
+          <details class="taskgroup" open>
+            <summary class="taskgroup__title">System Tasks</summary>
+            <div class="taskgroup__body">
+              <button class="tasklink" type="button">Hide the contents of this folder</button>
+              <button class="tasklink" type="button">Add or remove programs</button>
+              <button class="tasklink" type="button">Search for files or folders</button>
+            </div>
+          </details>
+
+          <details class="taskgroup" open>
+            <summary class="taskgroup__title">File and Folder Tasks</summary>
+            <div class="taskgroup__body">
+              <button class="tasklink" type="button">Make a new folder</button>
+              <button class="tasklink" type="button">Publish this folder to the Web</button>
+              <button class="tasklink" type="button">Share this folder</button>
+            </div>
+          </details>
+
+          <details class="taskgroup" open>
+            <summary class="taskgroup__title">Other Places</summary>
+            <div class="taskgroup__body">
+              <button class="tasklink" type="button">Local Disk (C:)</button>
+              <button class="tasklink" type="button">My Documents</button>
+              <button class="tasklink" type="button">My Network Places</button>
+            </div>
+          </details>
+        </aside>
+
+        <section class="explorer__content" aria-label="Content pane">
+          {{ caller() }}
+        </section>
+      </div>
+    </div>
+
+    <div class="status-bar" role="status" aria-label="Status bar">
+      <p class="status-bar-field">{{ statusLeftText or "" }}</p>
+      <p class="status-bar-field">{{ statusRightText or "" }}</p>
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+
+{% from "components/explorer-window.njk" import explorerWindow %}
+
+{% set explorerPath = explorerPath or ("C:\\" ~ title) %}
+
+{% call explorerWindow(title, explorerPath, "", "") %}
+  <div class="prose explorer__prose">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </div>
+{% endcall %}
