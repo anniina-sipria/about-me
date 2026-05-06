@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
     <meta name="description" content="{{ description or site.description }}" />
-    <link rel="stylesheet" href="/assets/xp/XP.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="{{ '/assets/xp/XP.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
@@ -24,7 +24,7 @@
         <div class="startmenu__col startmenu__col--left">
           <div class="startmenu__group" aria-label="Quick launches">
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/ie.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/ie.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__meta">Internet</span>
                 <span class="startmenu__label">Internet Explorer</span>
@@ -32,7 +32,7 @@
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/outlook-express.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/outlook-express.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__meta">E-mail</span>
                 <span class="startmenu__label">Outlook Express</span>
@@ -40,35 +40,35 @@
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/windows-media-player.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/windows-media-player.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__label">Windows Media Player</span>
               </span>
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/msn.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/msn.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__label">MSN</span>
               </span>
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/windows-messenger.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/windows-messenger.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__label">Windows Messenger</span>
               </span>
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/tour-windows-xp.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/tour-windows-xp.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__label">Tour Windows XP</span>
               </span>
             </a>
 
             <a class="startmenu__item" href="#" aria-disabled="true" tabindex="-1">
-              <img class="startmenu__icon" src="/assets/icons/files-settings-transfer-wizard.svg" alt="" width="32" height="32" />
+              <img class="startmenu__icon" src="{{ '/assets/icons/files-settings-transfer-wizard.svg' | url }}" alt="" width="32" height="32" />
               <span class="startmenu__text">
                 <span class="startmenu__label">Files and Settings Transfer Wizard</span>
               </span>
@@ -76,72 +76,72 @@
           </div>
 
           <a class="startmenu__item startmenu__allprograms" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/all-programs.svg" alt="" width="32" height="32" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/all-programs.svg' | url }}" alt="" width="32" height="32" />
             <span class="startmenu__text">
               <span class="startmenu__label">All Programs</span>
             </span>
           </a>
         </div>
         <div class="startmenu__col startmenu__col--right">
-          <a class="startmenu__item startmenu__item--system" href="/my-documents/">
-            <img class="startmenu__icon" src="/assets/icons/my-documents.svg" alt="" width="24" height="24" />
+          <a class="startmenu__item startmenu__item--system" href="{{ '/my-documents/' | url }}">
+            <img class="startmenu__icon" src="{{ '/assets/icons/my-documents.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">My Documents</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system startmenu__item--submenu" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/my-recent-documents.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/my-recent-documents.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">My Recent Documents</span></span>
           </a>
-          <a class="startmenu__item startmenu__item--system" href="/my-pictures/">
-            <img class="startmenu__icon" src="/assets/icons/my-pictures.svg" alt="" width="24" height="24" />
+          <a class="startmenu__item startmenu__item--system" href="{{ '/my-pictures/' | url }}">
+            <img class="startmenu__icon" src="{{ '/assets/icons/my-pictures.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">My Pictures</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/my-music.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/my-music.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">My Music</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/my-computer.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/my-computer.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">My Computer</span></span>
           </a>
 
           <div class="startmenu__divider" role="separator" aria-hidden="true"></div>
 
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/control-panel.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/control-panel.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Control Panel</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/program-access-defaults.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/program-access-defaults.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Set Program Access and Defaults</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/printers-faxes.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/printers-faxes.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Printers and Faxes</span></span>
           </a>
 
           <div class="startmenu__divider" role="separator" aria-hidden="true"></div>
 
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/help-support.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/help-support.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Help and Support</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/search.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/search.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Search</span></span>
           </a>
           <a class="startmenu__item startmenu__item--system" href="#" aria-disabled="true" tabindex="-1">
-            <img class="startmenu__icon" src="/assets/icons/run.svg" alt="" width="24" height="24" />
+            <img class="startmenu__icon" src="{{ '/assets/icons/run.svg' | url }}" alt="" width="24" height="24" />
             <span class="startmenu__text"><span class="startmenu__label">Run...</span></span>
           </a>
         </div>
       </div>
       <div class="startmenu__footer" role="group" aria-label="Session actions">
         <button class="startmenu__footerbtn" type="button" data-startmenu-action="logoff">
-          <img class="startmenu__footericon" src="/assets/icons/logoff.svg" alt="" width="20" height="20" />
+          <img class="startmenu__footericon" src="{{ '/assets/icons/logoff.svg' | url }}" alt="" width="20" height="20" />
           <span>Log Off</span>
         </button>
         <button class="startmenu__footerbtn" type="button" data-startmenu-action="shutdown">
-          <img class="startmenu__footericon" src="/assets/icons/power.svg" alt="" width="20" height="20" />
+          <img class="startmenu__footericon" src="{{ '/assets/icons/power.svg' | url }}" alt="" width="20" height="20" />
           <span>Turn Off Computer</span>
         </button>
       </div>
@@ -158,7 +158,7 @@
         {% if page.url and page.url.startsWith('/projects/') and not title %}
           {% set taskLabel = "Projects" %}
         {% endif %}
-        <a class="task" href="{{ taskHref }}" aria-current="page">{{ taskLabel }}</a>
+        <a class="task" href="{{ taskHref | url }}" aria-current="page">{{ taskLabel }}</a>
       </div>
 
       <div class="systray" aria-label="Notification area">
@@ -166,6 +166,6 @@
       </div>
     </div>
 
-    <script src="/assets/js/shell.js" defer></script>
+    <script src="{{ '/assets/js/shell.js' | url }}" defer></script>
   </body>
 </html>

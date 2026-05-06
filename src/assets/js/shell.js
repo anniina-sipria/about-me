@@ -85,7 +85,8 @@ function setupSoftNavigation() {
     if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return false;
 
     // Decap CMS admin is a standalone document; don't PJAX it.
-    if (url.pathname.startsWith("/admin")) return false;
+    // (On GitHub Pages the site may be served under a path prefix like /about-me/.)
+    if (url.pathname === "/admin" || url.pathname.startsWith("/admin/") || url.pathname.includes("/admin/")) return false;
 
     return true;
   }

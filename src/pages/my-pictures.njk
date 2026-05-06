@@ -10,8 +10,8 @@ permalink: /my-pictures/
   <ul class="gallery" aria-label="Picture gallery">
     {% for pic in pictures %}
       <li class="gallery__item">
-        <a class="gallery__link" href="{{ pic.url }}">
-          <img class="gallery__img" src="{{ pic.url }}" alt="{{ pic.alt }}" loading="lazy" />
+        <a class="gallery__link" href="{{ pic.url | url }}">
+          <img class="gallery__img" src="{{ pic.url | url }}" alt="{{ pic.alt }}" loading="lazy" />
         </a>
       </li>
     {% endfor %}

@@ -11,8 +11,8 @@ explorerPath: C:\\My Documents
   {% if collections.documentFolders and collections.documentFolders.length %}
     <div class="explorer__icons" role="list" aria-label="C:\\My Documents contents">
       {% for folder in collections.documentFolders %}
-        <a class="explorer__item explorer__item--link" role="listitem" href="/my-documents/{{ folder.slug }}/" aria-label="Open folder {{ folder.title }}">
-          <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <a class="explorer__item explorer__item--link" role="listitem" href="{{ ('/my-documents/' ~ folder.slug ~ '/') | url }}" aria-label="Open folder {{ folder.title }}">
+          <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
           <span class="explorer__itemlabel">{{ folder.title }}</span>
         </a>
       {% endfor %}

@@ -23,7 +23,7 @@ permalink: /projects/
         {% endfor %}
       </ul>
     {% else %}
-      <p>No projects yet. Add one in <a href="/admin/">Decap</a> (or create a Markdown file in <code>src/content/projects</code>).</p>
+      <p>No projects yet. Add one in <a href="{{ '/admin/' | url }}">Decap</a> (or create a Markdown file in <code>src/content/projects</code>).</p>
     {% endif %}
   </div>
 {% endcall %}

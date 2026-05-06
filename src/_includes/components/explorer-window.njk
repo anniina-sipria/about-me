@@ -23,13 +23,13 @@
     </div>
 
     <div class="explorer__toolbar" role="toolbar" aria-label="Standard buttons">
-      <img class="explorer__toolbarimg" src="/assets/toolbar.jpeg" alt="" />
+      <img class="explorer__toolbarimg" src="{{ '/assets/toolbar.jpeg' | url }}" alt="" />
     </div>
 
     <div class="explorer__address" aria-label="Address bar">
       <span class="explorer__addresslabel">Address</span>
       <div class="explorer__addressfield" role="group" aria-label="Current path">
-        <img class="explorer__addressicon" src="/assets/icons/folder.svg" alt="" width="16" height="16" />
+        <img class="explorer__addressicon" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="16" height="16" />
         <input class="explorer__path" type="text" value="{{ explorerPath }}" readonly />
       </div>
       <button class="explorer__gobtn" type="button" aria-label="Go">

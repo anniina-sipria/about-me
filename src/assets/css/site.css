@@ -29,7 +29,7 @@ body {
     radial-gradient(900px 520px at 15% 15%, rgba(255,255,255,0.25), transparent 60%),
     radial-gradient(700px 520px at 80% 10%, rgba(255,255,255,0.12), transparent 55%),
     linear-gradient(180deg, rgba(255,255,255,0.08), transparent 140px),
-    url("/assets/bg-image.jpg") center / cover no-repeat,
+    url("../bg-image.jpg") center / cover no-repeat,
     var(--xp-bg);
   font-family: Tahoma, Verdana, Segoe UI, system-ui, -apple-system, sans-serif;
   line-height: 1.35;

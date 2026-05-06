@@ -8,24 +8,24 @@ description: A Windows XP-inspired portfolio desktop.
 
 <section class="desktop" aria-label="Desktop">
   <div class="desktop__icons" role="list">
-    <a class="icon" role="listitem" href="/about/">
-      <img class="icon__img" src="/assets/icons/user.svg" alt="" width="48" height="48" />
+    <a class="icon" role="listitem" href="{{ '/about/' | url }}">
+      <img class="icon__img" src="{{ '/assets/icons/user.svg' | url }}" alt="" width="48" height="48" />
       <span class="icon__label">About Me</span>
     </a>
-    <a class="icon" role="listitem" href="/projects/">
-      <img class="icon__img" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+    <a class="icon" role="listitem" href="{{ '/projects/' | url }}">
+      <img class="icon__img" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
       <span class="icon__label">Projects</span>
     </a>
-    <a class="icon" role="listitem" href="/my-documents/">
-      <img class="icon__img" src="/assets/icons/my-documents.svg" alt="" width="48" height="48" />
+    <a class="icon" role="listitem" href="{{ '/my-documents/' | url }}">
+      <img class="icon__img" src="{{ '/assets/icons/my-documents.svg' | url }}" alt="" width="48" height="48" />
       <span class="icon__label">My Documents</span>
     </a>
-    <a class="icon" role="listitem" href="/my-pictures/">
-      <img class="icon__img" src="/assets/icons/my-pictures.svg" alt="" width="48" height="48" />
+    <a class="icon" role="listitem" href="{{ '/my-pictures/' | url }}">
+      <img class="icon__img" src="{{ '/assets/icons/my-pictures.svg' | url }}" alt="" width="48" height="48" />
       <span class="icon__label">My Pictures</span>
     </a>
-    <a class="icon" role="listitem" href="/contact/">
-      <img class="icon__img" src="/assets/icons/mail.svg" alt="" width="48" height="48" />
+    <a class="icon" role="listitem" href="{{ '/contact/' | url }}">
+      <img class="icon__img" src="{{ '/assets/icons/mail.svg' | url }}" alt="" width="48" height="48" />
       <span class="icon__label">Contact</span>
     </a>
   </div>
@@ -33,41 +33,41 @@ description: A Windows XP-inspired portfolio desktop.
   {% call explorerWindow("WINDOWS", "C:\\WINDOWS", "9 objects", "") %}
     <div class="explorer__icons" role="list" aria-label="C:\\WINDOWS contents">
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">addins</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">AppPatch</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">assembly</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">Config</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">COREL</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">Cursors</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">Debug</span>
       </div>
       <div class="explorer__item" role="listitem">
-        <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
+        <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
         <span class="explorer__itemlabel">Fonts</span>
       </div>
       <div class="explorer__item" role="listitem">
         <span class="explorer__itemicon" aria-hidden="true">
-          <img class="explorer__itemimg" src="/assets/icons/folder.svg" alt="" width="48" height="48" />
-          <img class="explorer__itemoverlay" src="/assets/icons/ie.svg" alt="" width="18" height="18" />
+          <img class="explorer__itemimg" src="{{ '/assets/icons/folder.svg' | url }}" alt="" width="48" height="48" />
+          <img class="explorer__itemoverlay" src="{{ '/assets/icons/ie.svg' | url }}" alt="" width="18" height="18" />
         </span>
         <span class="explorer__itemlabel">Downloaded Program Files</span>
       </div>
